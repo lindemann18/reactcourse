@@ -11,6 +11,7 @@ module.exports = {
 		return axios.get(requestUrl).then(
 			function(response)
 			{
+				console.log(response);
 				if(response.data.cod && response.data.message)
 				{
 					throw new Error(response.data.message);
@@ -21,7 +22,7 @@ module.exports = {
 			},
 			function(error)
 			{
-				throw new Error(error.data.message);
+				throw new Error(error.response.data.message);
 			}
 		);
 	}
