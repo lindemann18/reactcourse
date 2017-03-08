@@ -10,7 +10,8 @@ var Nav = React.createClass({
 		if(searchreg.test(weather))
 		{
 			this.refs.weather.value = "";
-			alert(weather);
+			var encodedLocation = encodeURIComponent(weather);
+			window.location.hash = "#/?location="+encodedLocation;
 		}
 	},
 	render:function(){
