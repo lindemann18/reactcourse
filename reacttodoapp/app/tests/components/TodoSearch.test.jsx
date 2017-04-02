@@ -27,7 +27,7 @@ describe("TodoSearch",()=>{
 		var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy}/>);
 
 		todoSearch.refs.showCompleted.checked = true;
-		TestUtils.Simulate.change(ttodoSearch.refs.showCompleted);
+		TestUtils.Simulate.change(todoSearch.refs.showCompleted);
 
 		expect(spy).toHaveBeenCalledWith(true,'');
 	})
